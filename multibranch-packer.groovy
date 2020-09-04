@@ -30,10 +30,10 @@ node {
 
             def ami_id = ''
             stage('Packer Build') {
-                sh 'packer build apache.json | tee output.txt'
+                ///sh 'packer build apache.json | tee output.txt'
 
-                ami_id = sh(script: "cat output.txt | grep ${aws_region_var} | awk \'{print \$2}\'", returnStdout: true).trim()
-                println(ami_id)
+                ///ami_id = sh(script: "cat output.txt | grep ${aws_region_var} | awk \'{print \$2}\'", returnStdout: true).trim()
+                ///println(ami_id)
             }
 
             stage('Create EC2 Instance'){
